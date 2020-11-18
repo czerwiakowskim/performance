@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { LogoModel } from "../../models/logo-model";
-import { ColorService } from "../../services/color.service";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {LogoModel} from "../../models/logo-model";
+import {ColorService} from "../../services/color.service";
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
+  styleUrls: ['./gallery.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GalleryComponent {
 
@@ -15,7 +16,7 @@ export class GalleryComponent {
     ];
 
   constructor(private colorService: ColorService) {
-    // for(let i = 0; i < 100; i++) {
+    // for(let i = 0; i < 1000; i++) {
     //   this.logos.push({id: i, color: colorService.randomColor()});
     // }
   }

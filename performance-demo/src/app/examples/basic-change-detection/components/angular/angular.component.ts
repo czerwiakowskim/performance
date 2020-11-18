@@ -1,5 +1,7 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {LogoModel} from "../../models/logo-model";
+import {Observable, Subscription} from "rxjs";
+import {ColorService} from "../../services/color.service";
 
 @Component({
   selector: 'app-angular',
@@ -7,12 +9,14 @@ import {LogoModel} from "../../models/logo-model";
   styleUrls: ['./angular.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AngularComponent {
+export class AngularComponent implements OnInit {
 
   @Input()
   logoModel: LogoModel;
 
-  constructor() { }
+  public color$: Observable<string>;
+
+  constructor(private colorService: ColorService) { }
 
   public check() {
     console.log('Angular component view checked');
@@ -20,6 +24,10 @@ export class AngularComponent {
 
   public getLogoUrl(): string {
     return `assets/angular-${this.logoModel.color}.svg`;
+  }
+
+  ngOnInit(): void {
+    this.color$ = this.colorService.color$;
   }
 
 }

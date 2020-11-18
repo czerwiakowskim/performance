@@ -1,2 +1,5 @@
 {{ check() }}
-<app-image [src]="getLogoUrl()"></app-image>
+<!--<app-image [src]="getLogoUrl()"></app-image>-->
+<!--<img [src]="'assets/angular-' + color + '.svg'">-->
+<img *ngIf="color$ | async as c"
+     [src]="'assets/angular-' + c + '.svg'">
