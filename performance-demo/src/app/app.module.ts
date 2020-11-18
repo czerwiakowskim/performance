@@ -12,6 +12,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SimpleClockComponent } from './examples/advanced-change-detection/simple-clock/simple-clock.component';
 import { ManualClockComponent } from './examples/advanced-change-detection/manual-clock/manual-clock.component';
+import { ZoneClockComponent } from './examples/advanced-change-detection/zone-clock/zone-clock.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ManualClockComponent } from './examples/advanced-change-detection/manua
     AngularComponent,
     GalleryComponent,
     SimpleClockComponent,
-    ManualClockComponent
+    ManualClockComponent,
+    ZoneClockComponent
   ],
     imports: [
         BrowserModule,
