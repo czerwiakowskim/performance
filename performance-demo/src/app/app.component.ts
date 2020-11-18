@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'performance-demo';
+
+  check() {
+    console.log('App component view checked')
+  }
 }

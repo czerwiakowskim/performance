@@ -10,13 +10,15 @@ import { GalleryComponent } from './examples/basic-change-detection/components/g
 import {MatButtonModule} from "@angular/material/button";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SimpleClockComponent } from './examples/advanced-change-detection/simple-clock/simple-clock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageComponent,
     AngularComponent,
-    GalleryComponent
+    GalleryComponent,
+    SimpleClockComponent
   ],
     imports: [
         BrowserModule,
