@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +8,8 @@ import { ImageComponent } from './examples/basic-change-detection/components/ima
 import { AngularComponent } from './examples/basic-change-detection/components/angular/angular.component';
 import { GalleryComponent } from './examples/basic-change-detection/components/gallery/gallery.component';
 import {MatButtonModule} from "@angular/material/button";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,11 @@ import {MatButtonModule} from "@angular/material/button";
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MatButtonModule
+        MatButtonModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
