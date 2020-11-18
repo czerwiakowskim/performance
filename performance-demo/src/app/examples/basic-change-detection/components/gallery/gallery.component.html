@@ -1,0 +1,11 @@
+<h2>Gallery</h2>
+
+{{ check() }}
+
+<div class="gallery">
+  <app-angular *ngFor="let logo of logos"
+               [logoModel]="logo"
+  ></app-angular>
+</div>
+
+<button mat-raised-button (click)="changeColor()">Change color</button>
