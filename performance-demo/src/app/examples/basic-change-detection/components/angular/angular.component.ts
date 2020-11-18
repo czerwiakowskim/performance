@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { LogoModel } from "../../models/logo-model";
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {LogoModel} from "../../models/logo-model";
 
 @Component({
   selector: 'app-angular',
   templateUrl: './angular.component.html',
-  styleUrls: ['./angular.component.scss']
+  styleUrls: ['./angular.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AngularComponent {
 

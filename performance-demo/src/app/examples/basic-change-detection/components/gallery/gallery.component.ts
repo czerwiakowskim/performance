@@ -9,16 +9,28 @@ import { ColorService } from "../../services/color.service";
 })
 export class GalleryComponent {
 
-  public logos: Array<LogoModel> = [{ id: 1, color: 'green' }, { id: 2, color: 'orange' }];
+  public logos: Array<LogoModel> = [
+    { id: 1, color: 'green' },
+    { id: 2, color: 'orange' }
+    ];
 
-  constructor(private colorService: ColorService) { }
+  constructor(private colorService: ColorService) {
+    // for(let i = 0; i < 100; i++) {
+    //   this.logos.push({id: i, color: colorService.randomColor()});
+    // }
+  }
 
   public check() {
     console.log('Gallery component view checked');
   }
 
   public changeColor() {
-    this.logos[0].color = this.colorService.randomColor();
+    const newLogo = {
+      id: this.logos[0].id,
+      color: this.colorService.randomColor()
+    };
+
+    this.logos[0] = newLogo;
   }
 
 }
