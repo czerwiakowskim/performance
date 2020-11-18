@@ -11,6 +11,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SimpleClockComponent } from './examples/advanced-change-detection/simple-clock/simple-clock.component';
+import { ManualClockComponent } from './examples/advanced-change-detection/manual-clock/manual-clock.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SimpleClockComponent } from './examples/advanced-change-detection/simpl
     ImageComponent,
     AngularComponent,
     GalleryComponent,
-    SimpleClockComponent
+    SimpleClockComponent,
+    ManualClockComponent
   ],
     imports: [
         BrowserModule,
