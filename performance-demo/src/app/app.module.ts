@@ -13,6 +13,11 @@ import { environment } from '../environments/environment';
 import { SimpleClockComponent } from './examples/advanced-change-detection/simple-clock/simple-clock.component';
 import { ManualClockComponent } from './examples/advanced-change-detection/manual-clock/manual-clock.component';
 import { ZoneClockComponent } from './examples/advanced-change-detection/zone-clock/zone-clock.component';
+import { LoopAsyncComponent } from './examples/trackby/loop-async/loop-async.component';
+import { TrackbyDemoComponent } from "./examples/trackby/trackby-demo/trackby-demo.component";
+import { LoopStandardComponent } from "./examples/trackby/loop-standard/loop-standard.component";
+import { LoopAsyncTrackbyComponent } from "./examples/trackby/loop-async-trackby/loop-async-trackby.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,13 +27,18 @@ import { ZoneClockComponent } from './examples/advanced-change-detection/zone-cl
     GalleryComponent,
     SimpleClockComponent,
     ManualClockComponent,
-    ZoneClockComponent
+    ZoneClockComponent,
+    LoopAsyncComponent,
+    LoopStandardComponent,
+    LoopAsyncTrackbyComponent,
+    TrackbyDemoComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MatButtonModule,
+        FormsModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
   providers: [],
